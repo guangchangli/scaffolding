@@ -1,0 +1,39 @@
+server:
+  port: 8091
+spring:
+  main:
+    banner-mode: 'off'
+  application:
+    name: nacos-demo
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/scaffolding?allowMultiQueries=true
+    username: root
+    password: Chang0.com
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        format_sql: true
+        show_sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+mybatis-plus:
+  global-config:
+    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID,"该类型为未设置主键类型,5, "字符串全局唯一ID"";
+    id-type: 1
+    db-column-underline: true
+    refresh-mapper: true
+  configuration:
+#  打印执行sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/com/aladdin/mapper/*.xml
+  type-aliases-package: 'com.aladdin.entity'
+
