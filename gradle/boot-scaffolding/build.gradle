@@ -47,6 +47,8 @@ dependencies {
     compile group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.2'
     runtime(group: 'mysql', name: 'mysql-connector-java', version: '8.0.19')
     implementation 'junit:junit:4.12'
+    compile group: 'net.sf.dozer', name: 'dozer', version: '5.5.1'
+
 
 }
 
