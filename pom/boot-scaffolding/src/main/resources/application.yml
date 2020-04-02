@@ -2,9 +2,19 @@ server:
   port: 8886
 spring:
   application:
-    name: scaffold-mongodb
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/scaffold
-      auto-index-creation: true
+    name: scaffold-boot
+data:
+  mongodb:
+    uri: mongodb://localhost:27017/scaffold
+    auto-index-creation: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
 
