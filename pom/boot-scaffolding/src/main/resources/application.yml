@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: scaffold-boot
+  datasource:
+    username: root
+    password: Chang0.com
+    url: jdbc:mysql://localhost:3306/scaffolding?allowMultiQueries=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 management:
   endpoints:
