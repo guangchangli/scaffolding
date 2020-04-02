@@ -2,22 +2,31 @@ package com.aladdin.exception;
 
 import com.aladdin.common.ResponseResult;
 import lombok.Getter;
+import org.springframework.http.HttpStatus;
 
 /**
  * @author lgc
  **/
 @Getter
-public class BusinessException  extends RuntimeException{
+public class BusinessException extends RuntimeException {
     private int errCode;
     private String errMsg;
-    public BusinessException(int errCode,String errMsg){
+
+    public BusinessException(int errCode, String errMsg) {
         super(errMsg);
-        this.errCode=errCode;
-        this.errMsg=errMsg;
+        this.errCode = errCode;
+        this.errMsg = errMsg;
     }
-    public BusinessException(ResponseResult responseResult){
+
+    public BusinessException(String message, Throwable cause) {
+        super(message, cause);
+        this.errCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
+        this.errMsg = message;
+    }
+
+    public BusinessException(ResponseResult responseResult) {
         super(responseResult.getMsg());
-        this.errCode=responseResult.getCode();
-        this.errMsg=responseResult.getMsg();
+        this.errCode = responseResult.getCode();
+        this.errMsg = responseResult.getMsg();
     }
 }

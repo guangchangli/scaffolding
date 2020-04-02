@@ -2,14 +2,9 @@ server:
   port: 8886
 spring:
   application:
-    name: scaffold-boot
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/scaffold
-    username: root
-    password: Chang0.com
-mybatis:
-  mapper-locations: classpath:com/aladdin/dao/*.xml
-  type-aliases-package: com.aladdin.entity
-
+    name: scaffold-mongodb
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/scaffold
+      auto-index-creation: true
 
