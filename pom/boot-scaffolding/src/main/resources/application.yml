@@ -8,6 +8,11 @@ spring:
     password: Chang0.com
     url: jdbc:mysql://localhost:3306/scaffolding?allowMultiQueries=true
     driver-class-name: com.mysql.cj.jdbc.Driver
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 
 management:
   endpoints:
