@@ -6,13 +6,14 @@ spring:
   datasource:
     username: root
     password: Chang0.com
-    url: jdbc:mysql://localhost:3306/scaffolding?allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/scaffold?allowMultiQueries=true
     driver-class-name: com.mysql.cj.jdbc.Driver
 pagehelper:
   helperDialect: mysql
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
+
 
 management:
   endpoints:
@@ -24,4 +25,8 @@ management:
       show-details: always
     shutdown:
       enabled: true
-
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true
+  type-aliases-package: com.aladdin.entuty
+  mapper-locations: classpath:/com/aladdin/dao/*.xml
