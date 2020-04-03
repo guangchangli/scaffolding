@@ -12,5 +12,4 @@ public class BootScaffoldingApplication {
         springApplication.setBannerMode(Banner.Mode.OFF);
         springApplication.run(args);
     }
-
 }

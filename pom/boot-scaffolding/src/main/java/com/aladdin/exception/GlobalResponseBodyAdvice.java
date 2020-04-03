@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
+
 @Slf4j
 @RestControllerAdvice(basePackages = {"com.aladdin.controller"})
 public class GlobalResponseBodyAdvice implements ResponseBodyAdvice<Object> {
+
 
     //这个方法表示对于哪些请求要执行beforeBodyWrite，返回true执行，返回false不执行
     @Override
