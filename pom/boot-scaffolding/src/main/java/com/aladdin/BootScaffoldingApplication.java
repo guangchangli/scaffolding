@@ -13,15 +13,4 @@ public class BootScaffoldingApplication {
         springApplication.run(args);
     }
 
-//    @Autowired
-//    MongoTemplate mongoTemplate;
-//    @Autowired
-//    MongoMappingContext mongoMappingContext;
-//
-//    @EventListener(ApplicationReadyEvent.class)
-//    public void initIndicesAfterStartup() {
-//        IndexOperations indexOps = mongoTemplate.indexOps(Article.class);
-//        IndexResolver resolver = new MongoPersistentEntityIndexResolver(mongoMappingContext);
-//        resolver.resolveIndexFor(Article.class).forEach(indexOps::ensureIndex);
-//    }
 }
